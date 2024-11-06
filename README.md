@@ -1,3 +1,7 @@
+## Intro
+
+This repo uses open AI api to categorize any given url using iab category standard and provide sentiment label for the feeded content (positive, negative, or neutral)
+
 ## Local Setup Guide
 
 Create .env file containing the following:
