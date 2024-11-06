@@ -1,0 +1,24 @@
+3gtyversion: '3.8'
+services:
+  app:
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+    stdin_open: true
+    tty: true
+    env_file:
+      - .env
+    volumes:
+      - type: bind
+        source: .
+        target: /app
+  llm:
+    image: ollama/ollama:0.1.27
+    ports:
+      - "11434:11434"
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: .
+        target: /llm
